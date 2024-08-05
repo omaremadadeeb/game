@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Modal for instructions -->
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content">
+            <h2>Instructions</h2>
+            <p><strong>Very Close!</strong> - If your guess is within 5 of the number.</p>
+            <p><strong>Close!</strong> - If your guess is between 6 and 10 of the number.</p>
+            <p><strong>Far Off!</strong> - If your guess is between 11 and 20 of the number.</p>
+            <p><strong>Very Far!</strong> - If your guess is more than 20 away from the number.</p>
+            <button onclick="startGame()" class="start-button">Start Game</button>
+        </div>
+    </div>
+
+    <div id="setupSection" style="display: none;">
+        <div class="container">
+            <h1>Welcome to the Guessing Game</h1>
+            <p>Enter the names of the players:</p>
+            <input type="text" id="player1Name" placeholder="Player 1 Name">
+            <input type="text" id="player2Name" placeholder="Player 2 Name">
+            <button onclick="startGameSetup()" class="start-button">Start Game</button>
+        </div>
+    </div>
+
+    <div id="gameSection" style="display: none;">
+        <div class="container">
+            <h1>Guess the Number</h1>
+            <p id="playerTurn">Player 1's turn</p>
+            <input type="number" id="userGuess" min="1" max="100" placeholder="Enter your guess">
+            <button onclick="makeGuess()" class="guess-button">Submit Guess</button>
+            <p id="message"></p>
+            <button onclick="resetGame()" class="reset-button">Reset Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
